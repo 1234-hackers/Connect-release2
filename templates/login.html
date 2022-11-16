@@ -5,16 +5,16 @@
 Log in Here
 
 <form method="POST" action= "/login/">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 
-        {{ form.csrf_token }}
+        {{hcaptcha}}
 
-
-        {{ form.email}} {{form.email.label}}
+        <input name="email" placeholder="Email" type="email">
 
 <br>
 <br>
 
-        {{form.passc}} {{form.passc.label}}
+        <input name="passcode"  placeholder="Password" type="password">
 
         
         <br>

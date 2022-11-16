@@ -1,7 +1,7 @@
 import base64
 from email import message
 from turtle import st
-from dns.message import Message
+# from dns.message import Message
 from flask import Flask, render_template, url_for, request, redirect,flash,session
 from flask.scaffold import F
 from flask_pymongo import PyMongo
@@ -264,7 +264,7 @@ def login():
                             return redirect(url_for('choose_tags'))
                         else:    
                             return redirect(url_for('feed'))
-    return render_template('login.html')
+    return render_template('auth/login.html')
 
 @application.route('/logout/' , methods = ['POST','GET'])
 @login_required

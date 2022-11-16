@@ -11,9 +11,11 @@
 
 <body>
 
-<form method="POST" action= "/login/" style=" margin-top: 150px;">
+<form method="POST" action= "/login/" style=" margin-top: 150px;" >
 
-        {{ form.csrf_token }}
+       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+        {{hcaptcha}}
  <h4>Connect</h4>
   <div>
       <input type="text" name="email" placeholder="Phone, email or username"/>
